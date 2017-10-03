@@ -47,10 +47,11 @@ define([
 
         update: function(obj, callback) {
             logger.debug(this.id + ".update");
-            console.log(this._contextObj);
+            var $element = $(".date", this.domNode.firstElementChild),
+                options = {};
+            this._initDatepicker($element, options);
 
             this._contextObj = obj;
-            console.log(this._contextObj);
             this._updateRendering(callback);
         },
 
@@ -60,6 +61,18 @@ define([
 
         uninitialize: function() {
             logger.debug(this.id + ".uninitialize");
+        },
+
+        /**
+         * Initialize the Datepicker
+         * @param {Object} $el - jquery object on which to init the datepicker
+         * @param {Object} options - options to set for the datepicker
+         */
+        _initDatepicker: function($el, options) {
+            console.debug("initializing datepicker on the following node: ");
+            console.debug($el);
+            var $input = $el.pickadate(options);
+            return $input.pickadate("picker");
         },
 
         _updateRendering: function(callback) {
