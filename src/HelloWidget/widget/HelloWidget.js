@@ -48,7 +48,9 @@ define([
         update: function(obj, callback) {
             logger.debug(this.id + ".update");
             var $element = $(".date", this.domNode.firstElementChild),
-                options = {};
+                options = {
+                    format: "mm/dd/yyyy"
+                };
             this._initDatepicker($element, options);
 
             this._contextObj = obj;
