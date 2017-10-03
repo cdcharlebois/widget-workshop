@@ -15,6 +15,10 @@ define([
     "dojo/html",
     "dojo/_base/event",
     "HelloWidget/lib/jquery-1.11.2",
+
+    // Add External Libraries
+    "",
+
     "dojo/text!HelloWidget/widget/template/HelloWidget.html"
 ], function(declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, lang, dojoText, dojoHtml, dojoEvent, _jQuery, widgetTemplate) {
     "use strict";
