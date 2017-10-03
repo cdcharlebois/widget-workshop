@@ -17,10 +17,11 @@ define([
     "HelloWidget/lib/jquery-1.11.2",
 
     // Add External Libraries
-    "",
+    "HelloWidget/lib/picker",
+    "HelloWidget/lib/picker.date",
 
     "dojo/text!HelloWidget/widget/template/HelloWidget.html"
-], function(declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, lang, dojoText, dojoHtml, dojoEvent, _jQuery, widgetTemplate) {
+], function(declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, lang, dojoText, dojoHtml, dojoEvent, _jQuery, _picker, _datepicker, widgetTemplate) {
     "use strict";
 
     var $ = _jQuery.noConflict(true);

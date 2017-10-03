@@ -7,7 +7,7 @@
 
     // AMD.
     if (typeof define == 'function' && define.amd)
-        define(['./picker', 'jquery'], factory)
+        define("HelloWidget/lib/picker.date", ['./picker', 'HelloWidget/lib/jquery-1.11.2'], factory)
 
     // Node.js/browserify.
     else if (typeof exports == 'object')
