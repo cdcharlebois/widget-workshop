@@ -33,6 +33,9 @@ define([
 
         widgetBase: null,
 
+        // Modeler 
+        dateFormat: "",
+
         // Internal variables.
         _handles: null,
         _contextObj: null,
@@ -49,7 +52,7 @@ define([
             logger.debug(this.id + ".update");
             var $element = $(".date", this.domNode.firstElementChild),
                 options = {
-                    format: "mm/dd/yyyy"
+                    format: this.dateFormat;
                 };
             this._initDatepicker($element, options);
 
