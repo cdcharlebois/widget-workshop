@@ -59,6 +59,20 @@ define([
             this._initDatepicker($element, options);
 
             this._contextObj = obj;
+            mx.data.action({
+                params: {
+                    applyto: "selection",
+                    actionname: this.onCloseMicroflow,
+                    guids: [this._contextObj.getGuid()]
+                },
+                origin: this.mxform,
+                callback: function(res) {
+                    console.log(res);
+                },
+                error: function(error) {
+                    alert(error.message);
+                }
+            });
             this._updateRendering(callback);
         },
 
