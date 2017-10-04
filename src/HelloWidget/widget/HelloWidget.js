@@ -35,6 +35,7 @@ define([
 
         // Modeler 
         dateFormat: "",
+        onCloseMicroflow: "",
 
         // Internal variables.
         _handles: null,
@@ -50,9 +51,10 @@ define([
 
         update: function(obj, callback) {
             logger.debug(this.id + ".update");
+            console.debug("received microflow " + this.onCloseMicroflow + " to call.");
             var $element = $(".date", this.domNode.firstElementChild),
                 options = {
-                    format: this.dateFormat;
+                    format: this.dateFormat
                 };
             this._initDatepicker($element, options);
 

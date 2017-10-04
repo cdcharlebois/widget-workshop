@@ -10,5 +10,11 @@
             <category>General</category>
             <description></description>
         </property>
+        <property key="onCloseMicroflow" type="microflow" required="false">
+            <caption>On Close</caption>
+            <category>General</category>
+            <description>A microflow to run when the picker is closed.</description>
+            <returnType type="Void"></returnType>
+        </property>
     </properties>
 </widget>
