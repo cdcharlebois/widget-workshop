@@ -16,5 +16,13 @@
             <description>A microflow to run when the picker is closed.</description>
             <returnType type="Void"></returnType>
         </property>
+        <property key="attribute" type="attribute" required="true" isPath="optional" pathType="reference">
+            <caption>Attribute</caption>
+            <category>General</category>
+            <description></description>
+            <attributeTypes>
+                <attributeType name="DateTime" />
+            </attributeTypes>
+        </property>
     </properties>
 </widget>
