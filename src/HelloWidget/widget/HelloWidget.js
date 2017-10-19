@@ -57,7 +57,11 @@ define([
             console.debug("got date " + dateFromContext);
             var $element = $(".date", this.domNode.firstElementChild),
                 options = {
-                    format: this.dateFormat
+                    format: this.dateFormat,
+                    onSet: lang.hitch(this, function(data) {
+                        console.debug(data);
+                        this._contextObj.set(this.attribute, new Date(data.select));
+                    })
                 };
             this.$dp = this._initDatepicker($element, options);
             this.$dp.set("select", new Date(dateFromContext).setHours(0, 0, 0, 0));
