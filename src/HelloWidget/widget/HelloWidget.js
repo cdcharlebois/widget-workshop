@@ -59,8 +59,10 @@ define([
                 options = {
                     format: this.dateFormat,
                     onSet: lang.hitch(this, function(data) {
-                        console.debug(data);
-                        this._contextObj.set(this.attribute, new Date(data.select));
+                        // console.debug(data);
+                        if (data.select) {
+                            this._contextObj.set(this.attribute, new Date(data.select));
+                        }
                     })
                 };
             this.$dp = this._initDatepicker($element, options);
