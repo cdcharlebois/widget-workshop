@@ -36,6 +36,7 @@ define([
         // Modeler 
         dateFormat: "",
         onCloseMicroflow: "",
+        attribute: "",
 
         // Internal variables.
         _handles: null,
@@ -50,15 +51,18 @@ define([
         },
 
         update: function(obj, callback) {
-            logger.debug(this.id + ".update");
+            this._contextObj = obj;
             console.debug("received microflow " + this.onCloseMicroflow + " to call.");
+            var dateFromContext = this._contextObj.get(this.attribute);
+            console.debug("got date " + dateFromContext);
             var $element = $(".date", this.domNode.firstElementChild),
                 options = {
                     format: this.dateFormat
                 };
-            this._initDatepicker($element, options);
+            this.$dp = this._initDatepicker($element, options);
+            this.$dp.set("select", new Date(dateFromContext).setHours(0, 0, 0, 0));
 
-            this._contextObj = obj;
+
             mx.data.action({
                 params: {
                     applyto: "selection",
